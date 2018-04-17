@@ -1,0 +1,85 @@
+2018-04-16 15:56:53.0275 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-04-16 15:56:53.0943 INFO main org.spark_project.jetty.util.log - Logging initialized @1921ms
+2018-04-16 15:56:53.0991 INFO main org.spark_project.jetty.server.Server - jetty-9.3.z-SNAPSHOT
+2018-04-16 15:56:54.0003 INFO main org.spark_project.jetty.server.Server - Started @1987ms
+2018-04-16 15:56:54.0017 INFO main org.spark_project.jetty.server.AbstractConnector - Started ServerConnector@63648ee9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-04-16 15:56:54.0038 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@c7a975a{/jobs,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0038 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4fe89c24{/jobs/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0039 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@55795845{/jobs/job,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0041 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@1a1da881{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0042 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5b970f7{/stages,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0042 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@7fd4acee{/stages/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0043 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@165b8a71{/stages/stage,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0044 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@756cf158{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0045 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@3f2ef586{/stages/pool,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0048 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@751d3241{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0048 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@76c7beb3{/storage,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0049 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@64337702{/storage/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0049 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2cf92cc7{/storage/rdd,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0050 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@30ea8c23{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0050 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@7b139eab{/environment,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0051 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4e76dac{/environment/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0051 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@611df6e3{/executors,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0052 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5f2f577{/executors/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0052 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@6273c5a4{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0053 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5d465e4b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0059 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@53e211ee{/static,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0060 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@70dd7e15{/,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0061 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4a9f80d3{/api,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0061 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@6c67e137{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0062 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2c9399a4{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0349 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@1ea9f009{/metrics/json,null,AVAILABLE,@Spark}
+2018-04-16 15:56:54.0472 INFO main MXNetJVM - Try loading mxnet-scala from native path.
+2018-04-16 15:56:54.0472 INFO main MXNetJVM - Try loading mxnet-scala-linux-x86_64-gpu from native path.
+2018-04-16 15:56:54.0472 INFO main MXNetJVM - Try loading mxnet-scala-linux-x86_64-cpu from native path.
+2018-04-16 15:56:54.0472 WARN main MXNetJVM - MXNet Scala native library not found in path. Copying native library from the archive. Consider installing the library somewhere in the path (for Windows: PATH, for Linux: LD_LIBRARY_PATH), or specifying by Java cmd option -Djava.library.path=[lib path].
+2018-04-16 15:56:54.0476 INFO main org.apache.mxnet.util.NativeLibraryLoader - Loading libmxnet-scala.so from /lib/native/ copying to mxnet-scala
+2018-04-16 15:56:58.0580 WARN Finalizer org.apache.mxnet.WarnIfNotDisposed - LEAK: [one-time warning] An instance of org.apache.mxnet.Symbol was not disposed. Set property mxnet.traceLeakedObjects to true to enable tracing
+2018-04-16 15:56:58.0809 INFO main org.apache.hadoop.mapred.FileInputFormat - Total input paths to process : 1
+2018-04-16 15:57:01.0203 INFO main org.apache.mxnet.spark.MXNet - repartitioning training set to 1 partitions
+2018-04-16 15:57:01.0278 INFO Thread-18 org.apache.mxnet.spark.MXNet - Starting scheduler on 192.168.10.28:39257
+2018-04-16 15:57:01.0326 INFO Thread-18 org.apache.mxnet.spark.ParameterServer - Started process: java  -cp /tmp/spark-f5dbc67b-71ac-45c1-b9d8-447c6e40b528/userFiles-528284b9-f4e7-44f1-b473-d7a5afed6aa7/mllib.jar org.apache.mxnet.spark.ParameterServer --role=scheduler --root-uri=192.168.10.28 --root-port=39257 --num-server=1 --num-worker=1 --timeout=300 at 192.168.10.28:39257
+2018-04-16 15:57:01.0327 INFO Thread-18 org.apache.mxnet.spark.ParameterServer - Starting InputStream-Redirecter Thread for 192.168.10.28:39257
+2018-04-16 15:57:01.0327 INFO Thread-18 org.apache.mxnet.spark.ParameterServer - Starting ErrorStream-Redirecter Thread for 192.168.10.28:39257
+2018-04-16 15:57:01.0622 INFO Executor task launch worker for task 4 org.apache.mxnet.spark.MXNet - Starting server ...
+2018-04-16 15:57:01.0625 INFO Executor task launch worker for task 4 org.apache.mxnet.spark.ParameterServer - Started process: java  -cp /tmp/spark-f5dbc67b-71ac-45c1-b9d8-447c6e40b528/userFiles-528284b9-f4e7-44f1-b473-d7a5afed6aa7/mllib.jar org.apache.mxnet.spark.ParameterServer --role=server --root-uri=192.168.10.28 --root-port=39257 --num-server=1 --num-worker=1 --timeout=300 at 192.168.10.28:39257
+2018-04-16 15:57:01.0626 INFO Executor task launch worker for task 4 org.apache.mxnet.spark.ParameterServer - Starting InputStream-Redirecter Thread for 192.168.10.28:39257
+2018-04-16 15:57:01.0626 INFO Executor task launch worker for task 4 org.apache.mxnet.spark.ParameterServer - Starting ErrorStream-Redirecter Thread for 192.168.10.28:39257
+2018-04-16 15:57:01.0896 INFO Executor task launch worker for task 5 org.apache.mxnet.spark.MXNet - Launching worker ...
+2018-04-16 15:57:01.0896 INFO Executor task launch worker for task 5 org.apache.mxnet.spark.MXNet - Batch 128
+2018-04-16 15:57:22.0044 INFO Executor task launch worker for task 5 org.apache.mxnet.spark.MXNet - Start training ...
+2018-04-16 15:57:22.0359 INFO Executor task launch worker for task 5 org.apache.mxnet.DataParallelExecutorManager - Start training with [cpu(4)]
+2018-04-16 15:57:22.0676 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[0] Train-accuracy=0.0
+2018-04-16 15:57:22.0677 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[0] Time cost=115
+2018-04-16 15:57:23.0293 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[1] Train-accuracy=0.0
+2018-04-16 15:57:23.0293 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[1] Time cost=75
+2018-04-16 15:57:23.0422 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[2] Train-accuracy=0.0
+2018-04-16 15:57:23.0422 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[2] Time cost=129
+2018-04-16 15:57:23.0540 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[3] Train-accuracy=0.0
+2018-04-16 15:57:23.0540 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[3] Time cost=118
+2018-04-16 15:57:23.0660 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[4] Train-accuracy=0.0078125
+2018-04-16 15:57:23.0660 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[4] Time cost=120
+2018-04-16 15:57:23.0785 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[5] Train-accuracy=0.015625
+2018-04-16 15:57:23.0785 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[5] Time cost=125
+2018-04-16 15:57:23.0907 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[6] Train-accuracy=0.03125
+2018-04-16 15:57:23.0907 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[6] Time cost=122
+2018-04-16 15:57:24.0030 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[7] Train-accuracy=0.03125
+2018-04-16 15:57:24.0030 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[7] Time cost=123
+2018-04-16 15:57:24.0152 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[8] Train-accuracy=0.03125
+2018-04-16 15:57:24.0153 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[8] Time cost=123
+2018-04-16 15:57:24.0280 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[9] Train-accuracy=0.0234375
+2018-04-16 15:57:24.0280 INFO Executor task launch worker for task 5 org.apache.mxnet.Model - Epoch[9] Time cost=127
+2018-04-16 15:57:24.0312 INFO Executor task launch worker for task 5 org.apache.mxnet.spark.MXNet - Training finished, waiting for other workers ...
+2018-04-16 15:57:25.0114 WARN Finalizer org.apache.mxnet.WarnIfNotDisposed - LEAK: [one-time warning] An instance of org.apache.mxnet.NDArray was not disposed. Set property mxnet.traceLeakedObjects to true to enable tracing
+2018-04-16 15:57:29.0166 INFO main org.apache.mxnet.spark.MXNet - Waiting for scheduler ...
+2018-04-16 15:57:29.0166 INFO main org.apache.mxnet.spark.example.ClassificationExample - Training cost 29983 milli seconds
+2018-04-16 15:57:29.0238 INFO main org.apache.hadoop.conf.Configuration.deprecation - mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+2018-04-16 15:57:29.0267 WARN dispatcher-event-loop-1 org.apache.spark.scheduler.TaskSetManager - Stage 6 contains a task of very large size (1696 KB). The maximum recommended task size is 100 KB.
+2018-04-16 15:57:30.0484 INFO Executor task launch worker for task 7 org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task 'attempt_20180416155729_0011_m_000000_0' to file:/home/leihui/IdeaProjects/spark-mxnet/mllib/model/_temporary/0/task_20180416155729_0011_m_000000
+2018-04-16 15:57:30.0663 INFO main org.apache.mxnet.spark.example.ClassificationExample - Now do validation
+2018-04-16 15:57:30.0698 INFO main org.apache.hadoop.mapred.FileInputFormat - Total input paths to process : 1
+2018-04-16 15:57:31.0010 INFO Executor task launch worker for task 9 org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task 'attempt_20180416155730_0016_m_000001_0' to file:/home/leihui/IdeaProjects/spark-mxnet/mllib/predict/_temporary/0/task_20180416155730_0016_m_000001
+2018-04-16 15:57:32.0237 INFO Executor task launch worker for task 8 org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter - Saved output of task 'attempt_20180416155730_0016_m_000000_0' to file:/home/leihui/IdeaProjects/spark-mxnet/mllib/predict/_temporary/0/task_20180416155730_0016_m_000000
+2018-04-16 15:57:32.0299 INFO main org.spark_project.jetty.server.AbstractConnector - Stopped Spark@63648ee9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-04-16 15:57:32.0341 INFO Thread-14 org.apache.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet1086067932642084284/mxnet-scala
+2018-04-16 15:57:32.0341 INFO Thread-14 org.apache.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet1086067932642084284
