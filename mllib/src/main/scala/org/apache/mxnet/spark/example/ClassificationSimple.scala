@@ -48,20 +48,20 @@ object ClassificationSimple {
       .setContext(Context.cpu(4))
       .setDimension(Shape(1, 28, 28))
       .setNetwork(getLenet)
-      .setExecutorJars("/home/leihui/IdeaProjects/spark-mxnet/mllib/target/scala-2.11/mllib.jar")
+      .setExecutorJars("/home/leihui/IdeaProjects/mxnet-on-spark/mllib/target/scala-2.11/mllib.jar")
 
     val sc = spark.sparkContext
 
-    val trainData = parseRawData(sc, "/home/leihui/IdeaProjects/spark-mxnet/mllib/datasets/train.txt")
+    val trainData = parseRawData(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/datasets/train.txt")
     trainData.foreach(f =>println(f))
     val start = System.currentTimeMillis
     val model = mxnet.fit(trainData)
     val timeCost = System.currentTimeMillis - start
     logger.info("Training cost {} milli seconds", timeCost)
-    model.save(sc, "/home/leihui/IdeaProjects/spark-mxnet/mllib/model")
+    model.save(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/model")
 
     logger.info("Now do validation")
-    val valData = parseRawData(sc, "/home/leihui/IdeaProjects/spark-mxnet/mllib/datasets/val.txt")
+    val valData = parseRawData(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/datasets/val.txt")
 
     val brModel = sc.broadcast(model)
     val res = valData.mapPartitions { data =>
@@ -90,7 +90,7 @@ object ClassificationSimple {
       prob.get.dispose()
       res
     }
-    res.saveAsTextFile(s"/home/leihui/IdeaProjects/spark-mxnet/mllib/predict")
+    res.saveAsTextFile(s"/home/leihui/IdeaProjects/mxnet-on-spark/mllib/predict")
     spark.stop()
     } catch {
       case e: Throwable =>
