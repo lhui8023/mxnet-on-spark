@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark
+package ml.dmlc.mxnet.spark
 
-import org.apache.mxnet.spark.io.PointIter
-import org.apache.mxnet.{FeedForward, NDArray, Shape}
+import ml.dmlc.mxnet.spark.io.PointIter
+import ml.dmlc.mxnet.{FeedForward, NDArray, Shape}
 import org.apache.spark.SparkContext
 import org.apache.spark.mllib.linalg.Vector
 
 /**
- * Wrapper for [[org.apache.mxnet.Model]] which used in Spark application
+ * Wrapper for [[ml.dmlc.mxnet.Model]] which used in Spark application
  * @author Yizhi Liu
  */
 class MXNetModel private[mxnet](

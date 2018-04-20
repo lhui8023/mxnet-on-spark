@@ -15,83 +15,92 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark.example
+package ml.dmlc.mxnet.spark.example
 
-import org.apache.mxnet.spark.MXNet
-import org.apache.mxnet.{Context, NDArray, Shape, Symbol}
+import ml.dmlc.mxnet.spark.MXNet
+import ml.dmlc.mxnet.{Symbol, NDArray, Context, Shape}
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.{SparkConf, SparkContext}
-import org.kohsuke.args4j.{CmdLineParser, Option}
-import org.slf4j.{Logger, LoggerFactory}
+import org.apache.spark.{SparkContext, SparkConf}
+import org.kohsuke.args4j.{Option, CmdLineParser}
+import org.slf4j.{LoggerFactory, Logger}
 
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.JavaConverters._
 
-class ClassificationSimple
-object ClassificationSimple {
+class ClassificationExample
+object ClassificationExample {
   private val logger: Logger = LoggerFactory.getLogger(classOf[ClassificationExample])
   def main(args: Array[String]): Unit = {
+    val cmdLine = new CommandLine
+    val parser: CmdLineParser = new CmdLineParser(cmdLine)
     try {
-    val spark = SparkSession
-      .builder()
-      .appName("MXNET")
-      .config("spark.some.config.option", "some-value")
-      .master("local[4]")
-      .getOrCreate()
+      parser.parseArgument(args.toList.asJava)
+      cmdLine.checkArguments()
 
-    val mxnet = new MXNet()
-      .setBatchSize(128)
-      .setLabelName("softmax_label")
-      .setContext(Context.cpu(4))
-      .setDimension(Shape(1, 28, 28))
-      .setNetwork(getLenet)
-      .setExecutorJars("/home/leihui/IdeaProjects/mxnet-on-spark/mllib/target/scala-2.11/mllib.jar")
+      val conf = new SparkConf().setAppName("MXNet")
+      val sc = new SparkContext(conf)
 
-    val sc = spark.sparkContext
+      val network = if (cmdLine.model == "mlp") getMlp else getLenet
+      val dimension = if (cmdLine.model == "mlp") Shape(784) else Shape(1, 28, 28)
+      val devs =
+        if (cmdLine.gpus != null) cmdLine.gpus.split(',').map(id => Context.gpu(id.trim.toInt))
+        else if (cmdLine.cpus != null) cmdLine.cpus.split(',').map(id => Context.cpu(id.trim.toInt))
+        else Array(Context.cpu(0))
 
-    val trainData = parseRawData(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/datasets/train.txt")
-    trainData.foreach(f =>println(f))
-    val start = System.currentTimeMillis
-    val model = mxnet.fit(trainData)
-    val timeCost = System.currentTimeMillis - start
-    logger.info("Training cost {} milli seconds", timeCost)
-    model.save(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/model")
+      val mxnet = new MXNet()
+        .setBatchSize(128)
+        .setLabelName("softmax_label")
+        .setContext(devs)
+        .setDimension(dimension)
+        .setNetwork(network)
+        .setNumEpoch(cmdLine.numEpoch)
+        .setNumServer(cmdLine.numServer)
+        .setNumWorker(cmdLine.numWorker)
+        .setExecutorJars(cmdLine.jars)
+        .setJava(cmdLine.java)
 
-    logger.info("Now do validation")
-    val valData = parseRawData(sc, "/home/leihui/IdeaProjects/mxnet-on-spark/mllib/datasets/val.txt")
+      val trainData = parseRawData(sc, cmdLine.input)
+      val start = System.currentTimeMillis
+      val model = mxnet.fit(trainData)
+      val timeCost = System.currentTimeMillis - start
+      logger.info("Training cost {} milli seconds", timeCost)
+      model.save(sc, cmdLine.output + "/model")
 
-    val brModel = sc.broadcast(model)
-    val res = valData.mapPartitions { data =>
-      // get real labels
-      import org.apache.spark.mllib.linalg.Vector
-      val points = ArrayBuffer.empty[Vector]
-      val y = ArrayBuffer.empty[Float]
-      while (data.hasNext) {
-        val evalData = data.next()
-        y += evalData.label.toFloat
-        points += evalData.features
+      logger.info("Now do validation")
+      val valData = parseRawData(sc, cmdLine.inputVal)
+
+      val brModel = sc.broadcast(model)
+      val res = valData.mapPartitions { data =>
+        // get real labels
+        import org.apache.spark.mllib.linalg.Vector
+        val points = ArrayBuffer.empty[Vector]
+        val y = ArrayBuffer.empty[Float]
+        while (data.hasNext) {
+          val evalData = data.next()
+          y += evalData.label.toFloat
+          points += evalData.features
+        }
+
+        // get predicted labels
+        val probArrays = brModel.value.predict(points.toIterator)
+        require(probArrays.length == 1)
+        val prob = probArrays(0)
+        val py = NDArray.argmax_channel(prob.get)
+        require(y.length == py.size, s"${y.length} mismatch ${py.size}")
+
+        // I'm too lazy to calculate the accuracy
+        val res = Iterator((y.toArray zip py.toArray).map {
+          case (y1, py1) => y1 + "," + py1 }.mkString("\n"))
+
+        py.dispose()
+        prob.get.dispose()
+        res
       }
+      res.saveAsTextFile(cmdLine.output + "/data")
 
-      // get predicted labels
-      val probArrays = brModel.value.predict(points.toIterator)
-      require(probArrays.length == 1)
-      val prob = probArrays(0)
-      val py = NDArray.argmax_channel(prob.get)
-      require(y.length == py.size, s"${y.length} mismatch ${py.size}")
-
-      // I'm too lazy to calculate the accuracy
-      val res = Iterator((y.toArray zip py.toArray).map {
-        case (y1, py1) => y1 + "," + py1 }.mkString("\n"))
-
-      py.dispose()
-      prob.get.dispose()
-      res
-    }
-    res.saveAsTextFile(s"/home/leihui/IdeaProjects/mxnet-on-spark/mllib/predict")
-    spark.stop()
+      sc.stop()
     } catch {
       case e: Throwable =>
         logger.error(e.getMessage, e)
@@ -104,7 +113,7 @@ object ClassificationSimple {
     raw.map { s =>
       val parts = s.split(' ')
       val label = java.lang.Double.parseDouble(parts(0))
-      val features = Vectors.dense(parts(1).trim().split(',').map(_.toDouble))
+      val features = Vectors.dense(parts(1).trim().split(',').map(java.lang.Double.parseDouble))
       LabeledPoint(label, features)
     }
   }

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark.utils
+package ml.dmlc.mxnet.spark.utils
 
 import java.io.IOException
 import java.net.{ServerSocket, NetworkInterface}

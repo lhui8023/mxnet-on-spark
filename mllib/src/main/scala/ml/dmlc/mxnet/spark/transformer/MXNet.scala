@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark.transformer
+package ml.dmlc.mxnet.spark.transformer
 
 import java.util.UUID
 
-import org.apache.mxnet.spark.{MXNetModel, MXNetParams}
-import org.apache.mxnet.{Context, Shape, Symbol}
+import ml.dmlc.mxnet.spark.{MXNetModel, MXNetParams}
+import ml.dmlc.mxnet.{Context, Shape, Symbol}
 import org.apache.spark.SparkContext
 import org.apache.spark.ml.param.ParamMap
 import org.apache.spark.ml.util.{MLReadable, MLReader, MLWritable, MLWriter}
@@ -44,7 +44,7 @@ class MXNet extends Predictor[Vector, MXNet, MXNetModelWrap] {
     val lps = dataset.select(getFeaturesCol, getLabelCol).rdd
       .map(row => new LabeledPoint(row.getAs[Double](getLabelCol),
         row.getAs[Vector](getFeaturesCol)))
-    val mxNet = new org.apache.mxnet.spark.MXNet()
+    val mxNet = new ml.dmlc.mxnet.spark.MXNet()
       .setBatchSize(p.batchSize)
       .setLabelName(p.labelName)
       .setContext(p.context)

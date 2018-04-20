@@ -67,7 +67,7 @@ lazy val mllib = (project in file("mllib"))
       "org.apache.spark" %% "spark-core" % sparkVersion % scope excludeAll (ExclusionRule("org.apache.commons", "commons-lang3")),
       "org.apache.spark" %% "spark-sql" % sparkVersion % scope,
       "org.apache.spark" %% "spark-mllib" % sparkMllibVersion % scope,
-      "org.apache.mxnet" % "mxnet-full_2.11-linux-x86_64-cpu" % "1.2.0.1-SNAPSHOT" % scope,
+      "ml.dmlc.mxnet" % "mxnet-full_2.11-linux-x86_64-cpu" % "1.1.0" % scope,
       "args4j" % "args4j" % "2.0.29" % scope
     )
   )
@@ -85,7 +85,7 @@ lazy val utils = (project in file("utils"))
       "org.apache.spark" %% "spark-core" % sparkVersion % scope excludeAll (ExclusionRule("org.apache.commons", "commons-lang3")),
       "org.apache.spark" %% "spark-sql" % sparkVersion % scope,
       "org.apache.spark" %% "spark-mllib" % sparkMllibVersion % scope,
-      "org.apache.mxnet" % "mxnet-full_2.11-linux-x86_64-cpu" % "1.2.0.1-SNAPSHOT" % scope,
+      "ml.dmlc.mxnet" % "mxnet-full_2.11-linux-x86_64-cpu" % "1.1.0" % scope,
       "args4j" % "args4j" % "2.0.29" % scope
     )
 )

@@ -15,14 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark
+package ml.dmlc.mxnet.spark
 
-import org.apache.mxnet._
-import org.apache.mxnet.optimizer.SGD
-import org.apache.mxnet.spark.io.LabeledPointIter
-
+import ml.dmlc.mxnet.optimizer.SGD
+import ml.dmlc.mxnet.spark.io.LabeledPointIter
+import ml.dmlc.mxnet.{Accuracy, Context, FeedForward, KVStore, KVStoreServer, Optimizer, Shape, Xavier}
 import org.slf4j.{Logger, LoggerFactory}
-
+import ml.dmlc.mxnet.{Context, NDArray, Shape, Symbol}
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 import org.apache.spark.SparkContext

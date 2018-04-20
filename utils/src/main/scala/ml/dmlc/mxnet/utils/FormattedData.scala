@@ -19,7 +19,8 @@ package ml.dmlc.mxnet.utils
 
 import java.io.{File, PrintWriter}
 
-import org.apache.mxnet.Shape
+import ml.dmlc.mxnet.Shape
+
 
 /**
  * MXNet on Spark training arguments

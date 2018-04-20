@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark.utils
+package ml.dmlc.mxnet.spark.utils
 
 import javax.imageio.ImageIO
 

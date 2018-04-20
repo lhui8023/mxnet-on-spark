@@ -15,20 +15,20 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark.io
+package ml.dmlc.mxnet.spark.io
 
-import org.apache.mxnet.{NDArray, DataBatch, DataIter, Shape}
-import org.apache.spark.mllib.linalg.Vector
+import ml.dmlc.mxnet.{DataBatch, NDArray, Shape, DataIter}
+import org.apache.spark.mllib.regression.LabeledPoint
 
 import scala.collection.immutable.ListMap
 import scala.collection.mutable.ArrayBuffer
 
 /**
- * A temporary helper implementation for predicting Vectors
+ * A helper converter for LabeledPoint
  * @author Yizhi Liu
  */
-class PointIter private[mxnet](
-  private val points: Iterator[Vector],
+class LabeledPointIter private[mxnet](
+  private val points: Iterator[LabeledPoint],
   private val dimension: Shape,
   private val _batchSize: Int,
   private val dataName: String = "data",
@@ -62,11 +62,12 @@ class PointIter private[mxnet](
       val labelBuilder = NDArray.empty(_batchSize)
       var instNum = 0
       while (instNum < batchSize && points.hasNext) {
-        val point = points.next().toArray.map(_.toFloat)
-        require(point.length == dimension.product,
-          s"Dimension mismatch: ${point.length} != $dimension")
-        dataBuilder.slice(instNum).set(point)
-        labelBuilder.slice(instNum).set(Array(-1f)) // fake label
+        val point = points.next()
+        val features = point.features.toArray.map(_.toFloat)
+        require(features.length == dimension.product,
+          s"Dimension mismatch: ${features.length} != $dimension")
+        dataBuilder.slice(instNum).set(features)
+        labelBuilder.slice(instNum).set(Array(point.label.toFloat))
         instNum += 1
       }
       val pad = batchSize - instNum

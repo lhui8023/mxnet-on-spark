@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.mxnet.spark
+package ml.dmlc.mxnet.spark
 
 import java.io.{IOException, InputStream, OutputStream}
 import java.util.concurrent.atomic.AtomicReference
 
-import org.apache.mxnet.KVStoreServer
-import org.kohsuke.args4j.{Option, CmdLineParser}
-import org.slf4j.{LoggerFactory, Logger}
+import ml.dmlc.mxnet.KVStoreServer
+import org.kohsuke.args4j.{CmdLineParser, Option}
+import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.mutable
 import scala.collection.JavaConverters._

@@ -1,6 +1,6 @@
 package ml.dmlc.mxnet.utils
 
-import org.apache.mxnet.{DataIter, IO, Shape}
+import ml.dmlc.mxnet.{DataIter, IO, Shape}
 
 
 /**

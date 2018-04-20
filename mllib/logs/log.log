@@ -83,3 +83,61 @@
 2018-04-20 16:32:25.0591 INFO main org.spark_project.jetty.server.AbstractConnector - Stopped Spark@374d04b6{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
 2018-04-20 16:32:25.0632 INFO Thread-14 org.apache.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet3927470235887635684/mxnet-scala
 2018-04-20 16:32:25.0632 INFO Thread-14 org.apache.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet3927470235887635684
+2018-04-20 16:46:21.0778 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-04-20 16:46:22.0325 INFO main org.spark_project.jetty.util.log - Logging initialized @1615ms
+2018-04-20 16:46:22.0375 INFO main org.spark_project.jetty.server.Server - jetty-9.3.z-SNAPSHOT
+2018-04-20 16:46:22.0388 INFO main org.spark_project.jetty.server.Server - Started @1679ms
+2018-04-20 16:46:22.0404 INFO main org.spark_project.jetty.server.AbstractConnector - Started ServerConnector@63648ee9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-04-20 16:46:22.0425 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@c7a975a{/jobs,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0426 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4fe89c24{/jobs/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0426 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@55795845{/jobs/job,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0429 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@1a1da881{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0429 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5b970f7{/stages,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0430 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@7fd4acee{/stages/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0430 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@165b8a71{/stages/stage,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0432 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@756cf158{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0433 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@3f2ef586{/stages/pool,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0436 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@751d3241{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0437 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@76c7beb3{/storage,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0438 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@64337702{/storage/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0438 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2cf92cc7{/storage/rdd,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0439 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@30ea8c23{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0440 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@7b139eab{/environment,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0441 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4e76dac{/environment/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0441 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@611df6e3{/executors,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0442 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5f2f577{/executors/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0443 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@6273c5a4{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0444 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5d465e4b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0450 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@53e211ee{/static,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0451 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@70dd7e15{/,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0452 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4a9f80d3{/api,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0452 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@6c67e137{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0453 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2c9399a4{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0708 INFO main org.spark_project.jetty.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@1ea9f009{/metrics/json,null,AVAILABLE,@Spark}
+2018-04-20 16:46:22.0800 INFO main MXNetJVM - Try loading mxnet-scala from native path.
+2018-04-20 16:46:22.0801 INFO main MXNetJVM - Try loading mxnet-scala-linux-x86_64-gpu from native path.
+2018-04-20 16:46:22.0801 INFO main MXNetJVM - Try loading mxnet-scala-linux-x86_64-cpu from native path.
+2018-04-20 16:46:22.0801 WARN main MXNetJVM - MXNet Scala native library not found in path. Copying native library from the archive. Consider installing the library somewhere in the path (for Windows: PATH, for Linux: LD_LIBRARY_PATH), or specifying by Java cmd option -Djava.library.path=[lib path].
+2018-04-20 16:46:22.0803 INFO main ml.dmlc.mxnet.util.NativeLibraryLoader - Loading libmxnet-scala.so from /lib/native/ copying to mxnet-scala
+2018-04-20 16:46:23.0113 ERROR main ml.dmlc.mxnet.util.NativeLibraryLoader - Couldn't load copied link file: java.lang.UnsatisfiedLinkError: /tmp/mxnet73612845308497618/mxnet-scala: libopenblas_openmp.so.0: cannot open shared object file: No such file or directory
+2018-04-20 16:46:23.0113 ERROR main MXNetJVM - Couldn't find native library mxnet-scala
+2018-04-20 16:46:23.0114 ERROR main ml.dmlc.mxnet.spark.example.ClassificationExample - /tmp/mxnet73612845308497618/mxnet-scala: libopenblas_openmp.so.0: cannot open shared object file: No such file or directory
+java.lang.UnsatisfiedLinkError: /tmp/mxnet73612845308497618/mxnet-scala: libopenblas_openmp.so.0: cannot open shared object file: No such file or directory
+	at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+	at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1941)
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1824)
+	at java.lang.Runtime.load0(Runtime.java:809)
+	at java.lang.System.load(System.java:1086)
+	at ml.dmlc.mxnet.util.NativeLibraryLoader$.loadLibraryFromStream(NativeLibraryLoader.scala:140)
+	at ml.dmlc.mxnet.util.NativeLibraryLoader$.loadLibrary(NativeLibraryLoader.scala:93)
+	at ml.dmlc.mxnet.Base$.<init>(Base.scala:70)
+	at ml.dmlc.mxnet.Base$.<clinit>(Base.scala)
+	at ml.dmlc.mxnet.Symbol$.initSymbolModule(Symbol.scala:1015)
+	at ml.dmlc.mxnet.Symbol$.<init>(Symbol.scala:830)
+	at ml.dmlc.mxnet.Symbol$.<clinit>(Symbol.scala)
+	at ml.dmlc.mxnet.spark.example.ClassificationSimple$.getLenet(ClassificationSimple.scala:158)
+	at ml.dmlc.mxnet.spark.example.ClassificationSimple$.main(ClassificationSimple.scala:50)
+	at ml.dmlc.mxnet.spark.example.ClassificationSimple.main(ClassificationSimple.scala)
+2018-04-20 16:46:23.0117 INFO Thread-14 ml.dmlc.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet73612845308497618/mxnet-scala
+2018-04-20 16:46:23.0117 INFO Thread-14 ml.dmlc.mxnet.util.NativeLibraryLoader - Deleting /tmp/mxnet73612845308497618
+2018-04-20 16:46:23.0124 INFO Thread-2 org.spark_project.jetty.server.AbstractConnector - Stopped Spark@63648ee9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
