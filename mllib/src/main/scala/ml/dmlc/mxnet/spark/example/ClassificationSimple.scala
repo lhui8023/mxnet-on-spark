@@ -48,7 +48,7 @@ object ClassificationSimple {
       .setContext(Context.cpu(4))
       .setDimension(Shape(1, 28, 28))
       .setNetwork(getLenet)
-      .setExecutorJars("/home/leihui/IdeaProjects/mxnet-on-spark/mllib/target/scala-2.11/mllib.jar")
+      //.setExecutorJars("/home/leihui/IdeaProjects/mxnet-on-spark/mllib/target/scala-2.11/mllib.jar")
 
     val sc = spark.sparkContext
 
