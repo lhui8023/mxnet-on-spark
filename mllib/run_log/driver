@@ -1,0 +1,482 @@
+I0425 10:31:34.158344 25818 fetcher.cpp:533] Fetcher Info: {"cache_directory":"\/tmp\/mesos\/fetch\/root","items":[{"action":"BYPASS_CACHE","uri":{"cache":false,"extract":true,"value":"hdfs:\/\/z008.kmtongji.com:9000\/mesos\/spark-job-server.jar"}}],"sandbox_directory":"\/var\/lib\/mesos\/slave\/slaves\/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0\/frameworks\/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000\/executors\/driver-20180425053134-0054\/runs\/5ef56962-b972-43f2-9ebc-6b8fa7b042f4","user":"root"}
+I0425 10:31:34.164132 25818 fetcher.cpp:444] Fetching URI 'hdfs://z008.kmtongji.com:9000/mesos/spark-job-server.jar'
+I0425 10:31:34.164160 25818 fetcher.cpp:285] Fetching directly into the sandbox directory
+I0425 10:31:34.164187 25818 fetcher.cpp:222] Fetching URI 'hdfs://z008.kmtongji.com:9000/mesos/spark-job-server.jar'
+I0425 10:31:34.623809 25818 fetcher.cpp:140] Downloading resource with Hadoop client from 'hdfs://z008.kmtongji.com:9000/mesos/spark-job-server.jar' to '/var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-job-server.jar'
+W0425 10:31:37.537489 25818 fetcher.cpp:324] Copying instead of extracting resource from URI with 'extract' flag, because it does not seem to be an archive: hdfs://z008.kmtongji.com:9000/mesos/spark-job-server.jar
+I0425 10:31:37.537552 25818 fetcher.cpp:582] Fetched 'hdfs://z008.kmtongji.com:9000/mesos/spark-job-server.jar' to '/var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-job-server.jar'
+I0425 10:31:37.647912 26012 exec.cpp:162] Version: 1.4.1
+I0425 10:31:37.652354 26022 exec.cpp:237] Executor registered on agent 00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0
+I0425 10:31:37.654386 26020 executor.cpp:171] Received SUBSCRIBED event
+I0425 10:31:37.654764 26020 executor.cpp:175] Subscribed executor on z008.kmtongji.com
+I0425 10:31:37.654868 26020 executor.cpp:171] Received LAUNCH event
+I0425 10:31:37.655017 26020 executor.cpp:633] Starting task driver-20180425053134-0054
+I0425 10:31:37.660789 26020 executor.cpp:477] Running '/usr/libexec/mesos/mesos-containerizer launch <POSSIBLY-SENSITIVE-DATA>'
+I0425 10:31:37.662123 26020 executor.cpp:646] Forked command at 26047
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/kmde/spark-2.3.0/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/kmde/spark-2.3.0/jars/alluxio-1.6.1-spark-client.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+[2018-04-25 05:31:39,558] WARN  doop.util.NativeCodeLoader [] [] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2018-04-25 05:31:39,729] INFO  park.jobserver.JobManager$ [] [] - Start JobManager with args: akka.tcp://JobServer@z008.kmtongji.com:53377,jobManager-e4-98cc-27808b58082e,8090
+[2018-04-25 05:31:40,047] INFO  park.jobserver.JobManager$ [] [] - Cluster mode: Removing akka.remote.netty.tcp.hostname from config!
+[2018-04-25 05:31:40,047] INFO  park.jobserver.JobManager$ [] [] - Cluster mode: Replacing spark.jobserver.sqldao.rootdir with container tmp dir.
+[2018-04-25 05:31:40,599] INFO  ka.event.slf4j.Slf4jLogger [] [] - Slf4jLogger started
+[2018-04-25 05:31:40,743] INFO  akka.remote.Remoting [] [akka.remote.Remoting] - Starting remoting
+[2018-04-25 05:31:41,016] INFO  akka.remote.Remoting [] [akka.remote.Remoting] - Remoting started; listening on addresses :[akka.tcp://JobServer@192.168.36.208:35497]
+[2018-04-25 05:31:41,045] INFO  .Cluster(akka://JobServer) [] [akka.cluster.Cluster(akka://JobServer)] - Cluster Node [akka.tcp://JobServer@192.168.36.208:35497] - Starting up...
+[2018-04-25 05:31:41,177] INFO  .Cluster(akka://JobServer) [] [akka.cluster.Cluster(akka://JobServer)] - Cluster Node [akka.tcp://JobServer@192.168.36.208:35497] - Registered cluster JMX MBean [akka:type=Cluster]
+[2018-04-25 05:31:41,178] INFO  .Cluster(akka://JobServer) [] [akka.cluster.Cluster(akka://JobServer)] - Cluster Node [akka.tcp://JobServer@192.168.36.208:35497] - Started up successfully
+[2018-04-25 05:31:41,231] INFO  .Cluster(akka://JobServer) [] [akka.cluster.Cluster(akka://JobServer)] - Cluster Node [akka.tcp://JobServer@192.168.36.208:35497] - No seed-nodes configured, manual cluster join required
+[2018-04-25 05:31:43,018] INFO  ark.jobserver.io.JobSqlDAO [] [] - rootDir is /tmp/sqldao2840732190231311158
+[2018-04-25 05:31:43,029] INFO  ark.jobserver.io.JobSqlDAO [] [] - DBCP disabled
+[2018-04-25 05:31:43,080] INFO  ternal.util.VersionPrinter [] [] - Flyway 3.2.1 by Boxfuse
+[2018-04-25 05:31:43,550] INFO  dbsupport.DbSupportFactory [] [] - Database: jdbc:mysql://d024.kmtongji.com:3306/spark_job_server_20?UseUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true (MySQL 5.5)
+[2018-04-25 05:31:43,875] INFO  nternal.command.DbValidate [] [] - Validated 8 migrations (execution time 00:00.193s)
+[2018-04-25 05:31:43,918] INFO  internal.command.DbMigrate [] [] - Current version of schema `spark_job_server_20`: 1
+[2018-04-25 05:31:43,919] INFO  internal.command.DbMigrate [] [] - Schema `spark_job_server_20` is up to date. No migration necessary.
+[2018-04-25 05:31:43,929] INFO  k.jobserver.io.JobDAOActor [] [akka://JobServer/user/dao-manager-jobmanager] - Starting actor spark.jobserver.io.JobDAOActor
+[2018-04-25 05:31:43,931] INFO  park.jobserver.JobManager$ [] [] - Starting JobManager named jobManager-e4-98cc-27808b58082e with config {
+    # String: 1
+    "app" : {
+        # String: 1
+        "name" : "spark.jobserver.JobServer"
+    },
+    # String: 1
+    "context-settings" : {
+        # String: 1
+        "context-factory" : "spark.jobserver.context.DefaultSparkContextFactory",
+        # String: 1
+        "context-init-timeout" : "60s",
+        # String: 1
+        "memory-per-node" : "1024m",
+        # String: 1
+        "num-cpu-cores" : 2,
+        # String: 1
+        "passthrough" : {
+            # String: 1
+            "spark" : {
+                # String: 1
+                "driver" : {
+                    # String: 1
+                    "allowMultipleContexts" : true
+                }
+            }
+        },
+        # String: 1
+        "python" : {
+            # String: 1
+            "executable" : "python",
+            # String: 1
+            "paths" : []
+        },
+        # String: 1
+        "streaming" : {
+            # String: 1
+            "batch_interval" : 1000,
+            # String: 1
+            "stopGracefully" : true,
+            # String: 1
+            "stopSparkContext" : true
+        }
+    },
+    # String: 1
+    "contexts" : {},
+    # merge of String: 1,system properties
+    "driver" : {
+        # system properties
+        "cores" : "1",
+        # String: 1
+        "extraClassPath" : "/home/kmde/nlp/stanford-chinese-corenlp-2017-06-09-models.jar:/home/kmde/nlp/stanford-corenlp-3.8.0.jar:/home/kmde/nlp/stanford-english-corenlp-2017-06-09-models.jar:/home/kmde/mxnet/libmxnet-init-scala-linux-x86_64-1.1.0.so:/home/kmde/mxnet/libmxnet-scala-linux-x86_64-cpu-1.1.0.so:/home/kmde/mxnet/mxnet-core_2.11-1.1.0.jar:/home/kmde/mxnet/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar",
+        # String: 1
+        "extraJavaOptions" : "-XX:+UseConcMarkSweepGC\n         -verbose:gc -XX:+PrintGCTimeStamps -Xloggc:/home/kmde/job-server/gc.out\n         -XX:MaxPermSize=512m\n         -XX:+CMSClassUnloadingEnabled  -XX:MaxDirectMemorySize=512M            -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true            -Dcom.sun.management.jmxremote.port=9998            -Dcom.sun.management.jmxremote.rmi.port=9998            -Dcom.sun.management.jmxremote.authenticate=false            -Dcom.sun.management.jmxremote.ssl=false -Dlog4j.configuration=file:/home/kmde/job-server/log4j-server.properties\n              -DLOG_DIR=/home/kmde/spark-job-server-2.3/log -Dspark.executor.uri=hdfs://z008.kmtongji.com:9000/mesos/spark-2.3.0.tar.gz ",
+        # String: 1
+        "memory" : "1G",
+        # system properties
+        "supervise" : "false"
+    },
+    # String: 1
+    "executor" : {
+        # String: 1
+        "extraClassPath" : "/home/kmde/nlp/stanford-chinese-corenlp-2017-06-09-models.jar:/home/kmde/nlp/stanford-corenlp-3.8.0.jar:/home/kmde/nlp/stanford-english-corenlp-2017-06-09-models.jar:/home/kmde/mxnet/libmxnet-init-scala-linux-x86_64-1.1.0.so:/home/kmde/mxnet/libmxnet-scala-linux-x86_64-cpu-1.1.0.so:/home/kmde/mxnet/mxnet-core_2.11-1.1.0.jar:/home/kmde/mxnet/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar",
+        # String: 1
+        "extraJavaOptions" : "-Dlog4j.configuration=file:/home/kmde/job-server/log4j-server.properties\n              -DLOG_DIR=/home/kmde/spark-job-server-2.3/log",
+        # String: 1
+        "uri" : "hdfs://z008.kmtongji.com:9000/mesos/spark-2.3.0.tar.gz"
+    },
+    # String: 1
+    "jars" : "file:/home/kmde/job-server/spark-job-server.jar",
+    # String: 1
+    "job-number-cpus" : 4,
+    # String: 1
+    "jobserver" : {
+        # String: 1
+        "bind-address" : "0.0.0.0",
+        # String: 1
+        "cache-on-upload" : true,
+        # String: 1
+        "cassandra" : {
+            # String: 1
+            "chunk-size-in-kb" : 1024,
+            # String: 1
+            "consistency" : "ONE",
+            # String: 1
+            "hosts" : [
+                # String: 1
+                "localhost:9042"
+            ],
+            # String: 1
+            "password" : "",
+            # String: 1
+            "user" : ""
+        },
+        # String: 1
+        "context-creation-timeout" : "60 s",
+        # String: 1
+        "context-per-jvm" : true,
+        # String: 1
+        "datadao" : {
+            # String: 1
+            "rootdir" : "/tmp/spark-jobserver/upload"
+        },
+        # String: 1
+        "filedao" : {
+            # String: 1
+            "rootdir" : "/home/kmde/spark-job-server-2.3/filedao/data"
+        },
+        # String: 1
+        "job-result-cache-size" : 5000,
+        # String: 1
+        "jobdao" : "spark.jobserver.io.JobSqlDAO",
+        # String: 1
+        "max-jobs-per-context" : 8,
+        # String: 1
+        "named-object-creation-timeout" : "60 s",
+        # String: 1
+        "port" : 8090,
+        # String: 1
+        "result-chunk-size" : "1m",
+        # String: 1
+        "short-timeout" : 300000,
+        # String: 1
+        "sqldao" : {
+            # String: 1
+            "dbcp" : {
+                # String: 1
+                "enabled" : false,
+                # String: 1
+                "initialsize" : 10,
+                # String: 1
+                "maxactive" : 20,
+                # String: 1
+                "maxidle" : 10
+            },
+            # String: 1
+            "dhcp" : {
+                # String: 1
+                "initialsize" : 10,
+                # String: 1
+                "maxactive" : 20,
+                # String: 1
+                "maxidle" : 10
+            },
+            # String: 1
+            "jdbc" : {
+                # String: 1
+                "password" : "kmsocialdbtestmachine",
+                # String: 1
+                "url" : "jdbc:mysql://d024.kmtongji.com:3306/spark_job_server_20?UseUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true",
+                # String: 1
+                "user" : "root"
+            },
+            # String: 1
+            "jdbc-driver" : "com.mysql.jdbc.Driver",
+            # hardcoded value
+            "rootdir" : "/tmp/sqldao2840732190231311158",
+            # String: 1
+            "slick-driver" : "slick.driver.MySQLDriver"
+        },
+        # String: 1
+        "startH2Server" : false,
+        # String: 1
+        "yarn-context-creation-timeout" : "40 s"
+    },
+    # String: 1
+    "kryo" : {
+        # String: 1
+        "classesToRegister" : "scala.collection.mutable.ArrayBuffer,scala.collection.mutable.ListBuffer"
+    },
+    # String: 1
+    "kryoserializer" : {
+        # String: 1
+        "buffer" : {
+            # String: 1
+            "max" : "512m"
+        }
+    },
+    # String: 1
+    "master" : "mesos://z008.kmtongji.com:5050",
+    # merge of String: 1,system properties
+    "mesos" : {
+        # String: 1
+        "coarse" : "true",
+        # system properties
+        "driver" : {
+            # system properties
+            "frameworkId" : "b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000-driver-20180425053134-0054"
+        }
+    },
+    # String: 1
+    "serializer" : "org.apache.spark.serializer.KryoSerializer",
+    # String: 1
+    "sql" : {
+        # String: 1
+        "caseSensitive" : "true"
+    },
+    # String: 1
+    "submit" : {
+        # String: 1
+        "deployMode" : "cluster"
+    },
+    # String: 1
+    "webUrlPort" : 8080,
+    # system properties
+    "yarn" : {
+        # system properties
+        "submit" : {
+            # system properties
+            "waitAppCompletion" : "false"
+        }
+    }
+}
+
+[2018-04-25 05:31:43,941] INFO  park.jobserver.JobManager$ [] [] - Joining cluster at address akka.tcp://JobServer@z008.kmtongji.com:53377
+[2018-04-25 05:31:43,942] INFO  .jobserver.JobManagerActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting actor spark.jobserver.JobManagerActor
+[2018-04-25 05:31:43,946] INFO  kka.actor.ProductionReaper [] [akka://JobServer/user/$a] - Starting actor spark.jobserver.common.akka.actor.ProductionReaper
+[2018-04-25 05:31:43,995] INFO  kka.actor.ProductionReaper [] [akka://JobServer/user/$a] - Watching actor Actor[akka://JobServer/user/jobManager-e4-98cc-27808b58082e#-1562693647]
+[2018-04-25 05:31:44,300] INFO  .Cluster(akka://JobServer) [] [akka.cluster.Cluster(akka://JobServer)] - Cluster Node [akka.tcp://JobServer@192.168.36.208:35497] - Welcome from [akka.tcp://JobServer@z008.kmtongji.com:53377]
+[2018-04-25 05:31:47,270] INFO  .jobserver.JobManagerActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting context with config:
+{
+    # hardcoded value
+    "context" : {
+        # hardcoded value
+        "name" : "leihuiTest2"
+    },
+    # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 125
+    # A zero-arg class implementing spark.jobserver.context.SparkContextFactory
+    # Determines the type of jobs that can run in a SparkContext
+    "context-factory" : "spark.jobserver.context.DefaultSparkContextFactory",
+    # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 143
+    # Timeout for SupervisorActor to wait for forked (separate JVM) contexts to initialize
+    "context-init-timeout" : "60s",
+    # hardcoded value
+    "is-adhoc" : "false",
+    # hardcoded value
+    "memory-per-node" : "4096m",
+    # hardcoded value
+    "num-cpu-cores" : "4",
+    # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 145
+    "passthrough" : {
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 146
+        "spark" : {
+            # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 146
+            "driver" : {
+                # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 146
+                # Ignore the Multiple context exception related with SPARK-2243
+                "allowMultipleContexts" : true
+            }
+        }
+    },
+    # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 155
+    # Settings for configuring instance of PythonContextFactory
+    "python" : {
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 159
+        # The shell command to run when launching the subprocess for python jobs
+        "executable" : "python",
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 157
+        # Any locations of python libraries to be included on the PYTHONPATH when running Python jobs
+        "paths" : []
+    },
+    # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 127
+    "streaming" : {
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 129
+        # Default batch interval for Spark Streaming contexts in milliseconds
+        "batch_interval" : 1000,
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 132
+        # if true, stops gracefully by waiting for the processing of all received data to be completed
+        "stopGracefully" : true,
+        # application.conf @ jar:file:/home/kmde/job-server/spark-job-server.jar!/application.conf: 136
+        # if true, stops the SparkContext with the StreamingContext. The underlying SparkContext will be
+        # stopped regardless of whether the StreamingContext has been started.
+        "stopSparkContext" : true
+    }
+}
+
+[2018-04-25 05:31:47,275] INFO  k.jobserver.JobStatusActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e/$a] - Starting actor spark.jobserver.JobStatusActor
+[2018-04-25 05:31:47,303] WARN  org.apache.spark.SparkConf [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - The configuration key spark.akka.threads is not supported any more because Spark doesn't use Akka since 2.0
+[2018-04-25 05:31:47,333] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Running Spark version 2.3.0
+[2018-04-25 05:31:47,368] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Submitted application: leihuiTest2
+[2018-04-25 05:31:47,445] INFO  ache.spark.SecurityManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Changing view acls to: root
+[2018-04-25 05:31:47,445] INFO  ache.spark.SecurityManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Changing modify acls to: root
+[2018-04-25 05:31:47,446] INFO  ache.spark.SecurityManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Changing view acls groups to: 
+[2018-04-25 05:31:47,446] INFO  ache.spark.SecurityManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Changing modify acls groups to: 
+[2018-04-25 05:31:47,446] INFO  ache.spark.SecurityManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2018-04-25 05:31:47,767] INFO  rg.apache.spark.util.Utils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Successfully started service 'sparkDriver' on port 44060.
+[2018-04-25 05:31:47,805] INFO  org.apache.spark.SparkEnv [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering MapOutputTracker
+[2018-04-25 05:31:47,834] INFO  org.apache.spark.SparkEnv [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering BlockManagerMaster
+[2018-04-25 05:31:47,839] INFO  BlockManagerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2018-04-25 05:31:47,840] INFO  BlockManagerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - BlockManagerMasterEndpoint up
+[2018-04-25 05:31:47,855] INFO  k.storage.DiskBlockManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created local directory at /var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/blockmgr-3ba44e69-7e1c-4c30-9212-79fb117dde07
+[2018-04-25 05:31:47,875] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - MemoryStore started with capacity 413.9 MB
+[2018-04-25 05:31:47,897] INFO  org.apache.spark.SparkEnv [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering OutputCommitCoordinator
+[2018-04-25 05:31:48,016] INFO  ark_project.jetty.util.log [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Logging initialized @9968ms
+[2018-04-25 05:31:48,114] INFO  roject.jetty.server.Server [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - jetty-9.3.z-SNAPSHOT
+[2018-04-25 05:31:48,141] INFO  roject.jetty.server.Server [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started @10093ms
+[2018-04-25 05:31:48,171] INFO  y.server.AbstractConnector [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started ServerConnector@4d166579{HTTP/1.1,[http/1.1]}{0.0.0.0:49959}
+[2018-04-25 05:31:48,171] INFO  rg.apache.spark.util.Utils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Successfully started service 'SparkUI' on port 49959.
+[2018-04-25 05:31:48,219] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@533459a0{/jobs,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,221] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@4d925e2e{/jobs/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,222] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@6dc7fb88{/jobs/job,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,224] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@7bed000c{/jobs/job/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,225] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@24515271{/stages,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,226] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@7698f6c8{/stages/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,227] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@71af65b2{/stages/stage,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,229] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@7da273f3{/stages/stage/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,230] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@772a0b00{/stages/pool,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,231] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@1aa15db0{/stages/pool/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,233] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@39afc1cc{/storage,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,234] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@57fc00e1{/storage/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,235] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@70a96315{/storage/rdd,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,236] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@60f5ec6d{/storage/rdd/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,237] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@2793f01e{/environment,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,238] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@105f0705{/environment/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,241] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@2b557fd0{/executors,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,242] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@648c7853{/executors/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,244] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@5c2777dc{/executors/threadDump,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,245] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@34a83472{/executors/threadDump/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,258] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@340376c8{/static,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,259] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@1ec2f1cc{/,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,262] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@1e3768e2{/api,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,262] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@1a6ce36e{/jobs/job/kill,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,263] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@6cc7fdde{/stages/stage/kill,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,266] INFO  rg.apache.spark.ui.SparkUI [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Bound SparkUI to 0.0.0.0, and started at http://z008.kmtongji.com:49959
+[2018-04-25 05:31:48,374] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added JAR file:/var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/./spark-job-server.jar at spark://z008.kmtongji.com:44060/jars/spark-job-server.jar with timestamp 1524623508373
+I0425 10:31:48.649457 26354 sched.cpp:232] Version: 1.4.1
+I0425 10:31:48.651993 26343 sched.cpp:336] New master detected at master@192.168.36.208:5050
+I0425 10:31:48.652426 26343 sched.cpp:352] No credentials provided. Attempting to register without authentication
+I0425 10:31:48.655704 26335 sched.cpp:759] Framework registered with b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000-driver-20180425053134-0054
+[2018-04-25 05:31:48,688] INFO  rg.apache.spark.util.Utils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38994.
+[2018-04-25 05:31:48,689] INFO  .NettyBlockTransferService [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Server created on z008.kmtongji.com:38994
+[2018-04-25 05:31:48,691] INFO  spark.storage.BlockManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2018-04-25 05:31:48,694] INFO  storage.BlockManagerMaster [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering BlockManager BlockManagerId(driver, z008.kmtongji.com, 38994, None)
+[2018-04-25 05:31:48,700] INFO  BlockManagerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering block manager z008.kmtongji.com:38994 with 413.9 MB RAM, BlockManagerId(driver, z008.kmtongji.com, 38994, None)
+[2018-04-25 05:31:48,707] INFO  storage.BlockManagerMaster [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registered BlockManager BlockManagerId(driver, z008.kmtongji.com, 38994, None)
+[2018-04-25 05:31:48,707] INFO  spark.storage.BlockManager [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Initialized BlockManager: BlockManagerId(driver, z008.kmtongji.com, 38994, None)
+[2018-04-25 05:31:48,990] INFO  ver.handler.ContextHandler [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started o.s.j.s.ServletContextHandler@443cfa1f{/metrics/json,null,AVAILABLE,@Spark}
+[2018-04-25 05:31:48,994] INFO  rseGrainedSchedulerBackend [] [] - Mesos task 0 is now TASK_LOST
+[2018-04-25 05:31:49,004] INFO  storage.BlockManagerMaster [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removal of executor 0 requested
+[2018-04-25 05:31:49,006] INFO  ulerBackend$DriverEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Asked to remove non-existent executor 0
+[2018-04-25 05:31:49,013] INFO  rseGrainedSchedulerBackend [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2018-04-25 05:31:49,017] INFO  BlockManagerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Trying to remove executor 0 from BlockManagerMaster.
+[2018-04-25 05:31:56,743] INFO  rseGrainedSchedulerBackend [] [] - Mesos task 1 is now TASK_RUNNING
+[2018-04-25 05:32:00,802] INFO  ulerBackend$DriverEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.36.208:32961) with ID 1
+[2018-04-25 05:32:00,886] INFO  BlockManagerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Registering block manager z008.kmtongji.com:43826 with 2004.6 MB RAM, BlockManagerId(1, z008.kmtongji.com, 43826, None)
+[2018-04-25 05:34:10,433] INFO  DefaultSparkContextFactory [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Loading class com.kongming.kmdm.spark.jobs.mxnet.MXNETJob for app mxnet-Standard
+[2018-04-25 05:34:10,457] INFO  ark.jobserver.JobCacheImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Begin to get jar path for app mxnet-Standard, uploadTime 2018-04-25T04:57:42.000+03:00 from dao akka://JobServer/user/dao-manager-jobmanager#1709885157
+[2018-04-25 05:34:12,458] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added JAR /tmp/sqldao2840732190231311158/mxnet-Standard-20180425_045742_000.jar at spark://z008.kmtongji.com:44060/jars/mxnet-Standard-20180425_045742_000.jar with timestamp 1524623652458
+[2018-04-25 05:34:12,463] INFO  util.ContextURLClassLoader [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added URL file:/tmp/sqldao2840732190231311158/mxnet-Standard-20180425_045742_000.jar to ContextURLClassLoader
+[2018-04-25 05:34:12,464] INFO  k.jobserver.util.JarUtils$ [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Loading object com.kongming.kmdm.spark.jobs.mxnet.MXNETJob$ using loader spark.jobserver.util.ContextURLClassLoader@420f7448
+[2018-04-25 05:34:12,496] INFO  .jobserver.JobManagerActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting Spark job e0b09fda-21ae-4564-b756-70dcd8b7e4a5 [com.kongming.kmdm.spark.jobs.mxnet.MXNETJob]...
+[2018-04-25 05:34:12,499] INFO  .jobserver.JobManagerActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting job future thread
+[2018-04-25 05:34:12,512] INFO  k.jobserver.JobStatusActor [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e/$a] - Job e0b09fda-21ae-4564-b756-70dcd8b7e4a5 started
+[2018-04-25 05:34:12,576] INFO  MXNetJVM [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Try loading mxnet-scala from native path.
+[2018-04-25 05:34:12,577] INFO  MXNetJVM [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Try loading mxnet-scala-linux-x86_64-gpu from native path.
+[2018-04-25 05:34:12,577] INFO  MXNetJVM [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Try loading mxnet-scala-linux-x86_64-cpu from native path.
+[2018-04-25 05:34:12,577] WARN  MXNetJVM [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - MXNet Scala native library not found in path. Copying native library from the archive. Consider installing the library somewhere in the path (for Windows: PATH, for Linux: LD_LIBRARY_PATH), or specifying by Java cmd option -Djava.library.path=[lib path].
+[2018-04-25 05:34:12,586] INFO  t.util.NativeLibraryLoader [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Loading libmxnet-scala.so from /lib/native/ copying to mxnet-scala
+[2018-04-25 05:34:15,669] WARN  lc.mxnet.WarnIfNotDisposed [] [] - LEAK: [one-time warning] An instance of ml.dmlc.mxnet.Symbol was not disposed. Set property mxnet.traceLeakedObjects to true to enable tracing
+[2018-04-25 05:34:15,996] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_0 stored as values in memory (estimated size 236.5 KB, free 413.7 MB)
+[2018-04-25 05:34:16,243] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_0_piece0 stored as bytes in memory (estimated size 22.9 KB, free 413.7 MB)
+[2018-04-25 05:34:16,245] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_0_piece0 in memory on z008.kmtongji.com:38994 (size: 22.9 KB, free: 413.9 MB)
+[2018-04-25 05:34:16,250] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created broadcast 0 from textFile at MXNETJob.scala:104
+[2018-04-25 05:34:16,435] INFO  uxio.metrics.MetricsSystem [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting sinks with config: {}.
+[2018-04-25 05:34:16,440] INFO  p.HadoopConfigurationUtils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Loading Alluxio properties from Hadoop configuration: {}
+[2018-04-25 05:34:16,552] INFO  alluxio.AbstractClient [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Alluxio client (version 1.6.1) is trying to connect with FileSystemMasterClient @ z010.kmtongji.com/192.168.36.210:19998
+[2018-04-25 05:34:16,574] INFO  alluxio.AbstractClient [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Client registered with FileSystemMasterClient @ z010.kmtongji.com/192.168.36.210:19998
+[2018-04-25 05:34:16,626] INFO  alluxio.AbstractClient [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Alluxio client (version 1.6.1) is trying to connect with FileSystemMasterClient @ z010.kmtongji.com/192.168.36.210:19998
+[2018-04-25 05:34:16,628] INFO  alluxio.AbstractClient [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Client registered with FileSystemMasterClient @ z010.kmtongji.com/192.168.36.210:19998
+[2018-04-25 05:34:16,723] INFO  oop.mapred.FileInputFormat [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Total input paths to process : 1
+[2018-04-25 05:34:16,751] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting job: foreach at MXNETJob.scala:55
+[2018-04-25 05:34:16,871] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_1 stored as values in memory (estimated size 3.6 KB, free 413.7 MB)
+[2018-04-25 05:34:16,895] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.1 KB, free 413.7 MB)
+[2018-04-25 05:34:16,897] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_1_piece0 in memory on z008.kmtongji.com:38994 (size: 2.1 KB, free: 413.9 MB)
+[2018-04-25 05:34:16,899] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created broadcast 1 from broadcast at DAGScheduler.scala:1039
+[2018-04-25 05:34:16,926] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Adding task set 0.0 with 2 tasks
+[2018-04-25 05:34:19,496] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_1_piece0 in memory on z008.kmtongji.com:43826 (size: 2.1 KB, free: 2004.6 MB)
+[2018-04-25 05:34:20,129] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_0_piece0 in memory on z008.kmtongji.com:43826 (size: 22.9 KB, free: 2004.6 MB)
+[2018-04-25 05:34:21,946] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[2018-04-25 05:34:21,969] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added file /home/kmde/mxnet/jars/elemental-spark-jobs.jar at spark://z008.kmtongji.com:44060/files/elemental-spark-jobs.jar with timestamp 1524623661968
+[2018-04-25 05:34:21,971] INFO  rg.apache.spark.util.Utils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Copying /home/kmde/mxnet/jars/elemental-spark-jobs.jar to /var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-aefefd6c-cd6c-44fd-906c-4235373458b1/userFiles-b6733868-42df-4c1d-bbd4-e39076eddfab/elemental-spark-jobs.jar
+[2018-04-25 05:34:22,124] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added file /home/kmde/mxnet/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar at spark://z008.kmtongji.com:44060/files/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar with timestamp 1524623662124
+[2018-04-25 05:34:22,124] INFO  rg.apache.spark.util.Utils [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Copying /home/kmde/mxnet/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar to /var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-aefefd6c-cd6c-44fd-906c-4235373458b1/userFiles-b6733868-42df-4c1d-bbd4-e39076eddfab/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar
+[2018-04-25 05:34:22,198] INFO  ing.kmdm.spark.mxnet.MXNet [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - repartitioning training set to 1 partitions
+[2018-04-25 05:34:22,232] INFO  ing.kmdm.spark.mxnet.MXNet [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting scheduler on 116.213.71.208:56668
+[2018-04-25 05:34:22,246] INFO  park.mxnet.ParameterServer [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Started process: java  -cp /var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-aefefd6c-cd6c-44fd-906c-4235373458b1/userFiles-b6733868-42df-4c1d-bbd4-e39076eddfab/elemental-spark-jobs.jar:/var/lib/mesos/slave/slaves/00881b50-a8a5-4572-be7f-b9b2e6c7b1e3-S0/frameworks/b9e1629f-4519-4fd8-ac00-2b48454b88b5-0000/executors/driver-20180425053134-0054/runs/5ef56962-b972-43f2-9ebc-6b8fa7b042f4/spark-aefefd6c-cd6c-44fd-906c-4235373458b1/userFiles-b6733868-42df-4c1d-bbd4-e39076eddfab/mxnet-full_2.11-linux-x86_64-cpu-1.1.0.jar com.kongming.kmdm.spark.mxnet.ParameterServer --role=scheduler --root-uri=116.213.71.208 --root-port=56668 --num-server=1 --num-worker=1 --timeout=300 at 116.213.71.208:56668
+[2018-04-25 05:34:22,246] INFO  park.mxnet.ParameterServer [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting InputStream-Redirecter Thread for 116.213.71.208:56668
+[2018-04-25 05:34:22,248] INFO  park.mxnet.ParameterServer [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting ErrorStream-Redirecter Thread for 116.213.71.208:56668
+[2018-04-25 05:34:22,282] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting job: foreachPartition at MXNet.scala:125
+[2018-04-25 05:34:22,294] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_2 stored as values in memory (estimated size 6.4 KB, free 413.7 MB)
+[2018-04-25 05:34:22,306] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Starting job: foreachPartition at MXNet.scala:237
+[2018-04-25 05:34:22,306] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.8 KB, free 413.7 MB)
+[2018-04-25 05:34:22,308] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_2_piece0 in memory on z008.kmtongji.com:38994 (size: 2.8 KB, free: 413.9 MB)
+[2018-04-25 05:34:22,309] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created broadcast 2 from broadcast at DAGScheduler.scala:1039
+[2018-04-25 05:34:22,310] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Adding task set 1.0 with 1 tasks
+[2018-04-25 05:34:22,337] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_3 stored as values in memory (estimated size 5.1 KB, free 413.7 MB)
+[2018-04-25 05:34:22,347] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_3_piece0 stored as bytes in memory (estimated size 3.0 KB, free 413.6 MB)
+[2018-04-25 05:34:22,348] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_3_piece0 in memory on z008.kmtongji.com:38994 (size: 3.0 KB, free: 413.9 MB)
+[2018-04-25 05:34:22,350] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created broadcast 3 from broadcast at DAGScheduler.scala:1039
+[2018-04-25 05:34:22,354] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Adding task set 2.0 with 2 tasks
+[2018-04-25 05:34:23,040] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_3_piece0 in memory on z008.kmtongji.com:43826 (size: 3.0 KB, free: 2004.6 MB)
+[2018-04-25 05:34:23,067] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_2_piece0 in memory on z008.kmtongji.com:43826 (size: 2.8 KB, free: 2004.6 MB)
+[2018-04-25 05:34:23,209] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[2018-04-25 05:34:24,637] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_4 stored as values in memory (estimated size 9.3 KB, free 413.6 MB)
+[2018-04-25 05:34:24,647] INFO  storage.memory.MemoryStore [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.3 KB, free 413.6 MB)
+[2018-04-25 05:34:24,648] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_4_piece0 in memory on z008.kmtongji.com:38994 (size: 4.3 KB, free: 413.9 MB)
+[2018-04-25 05:34:24,649] INFO  parkContextFactory$$anon$1 [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Created broadcast 4 from broadcast at DAGScheduler.scala:1039
+[2018-04-25 05:34:24,650] INFO  cheduler.TaskSchedulerImpl [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Adding task set 3.0 with 1 tasks
+[2018-04-25 05:34:24,680] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Added broadcast_4_piece0 in memory on z008.kmtongji.com:43826 (size: 4.3 KB, free: 2004.6 MB)
+[2018-04-25 05:34:24,739] INFO  utputTrackerMasterEndpoint [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Asked to send map output locations for shuffle 0 to 192.168.36.208:32961
+log4j:WARN No appenders could be found for logger (MXNetJVM).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[2018-04-25 05:35:39,981] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 10
+[2018-04-25 05:35:39,981] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 20
+[2018-04-25 05:35:39,981] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 24
+[2018-04-25 05:35:40,009] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed broadcast_1_piece0 on z008.kmtongji.com:38994 in memory (size: 2.1 KB, free: 413.9 MB)
+[2018-04-25 05:35:40,020] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed broadcast_1_piece0 on z008.kmtongji.com:43826 in memory (size: 2.1 KB, free: 2004.6 MB)
+[2018-04-25 05:35:40,028] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 13
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 19
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 21
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 22
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 14
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 17
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 18
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 16
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 3
+[2018-04-25 05:35:40,029] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 11
+[2018-04-25 05:35:40,030] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 8
+[2018-04-25 05:35:40,030] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 15
+[2018-04-25 05:35:40,031] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 0
+[2018-04-25 05:35:40,031] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 6
+[2018-04-25 05:35:40,031] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 1
+[2018-04-25 05:35:40,031] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 12
+[2018-04-25 05:35:40,034] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed broadcast_3_piece0 on z008.kmtongji.com:38994 in memory (size: 3.0 KB, free: 413.9 MB)
+[2018-04-25 05:35:40,036] INFO  k.storage.BlockManagerInfo [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Removed broadcast_3_piece0 on z008.kmtongji.com:43826 in memory (size: 3.0 KB, free: 2004.6 MB)
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 2
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 7
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 4
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 9
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 5
+[2018-04-25 05:35:40,039] INFO  pache.spark.ContextCleaner [] [akka://JobServer/user/jobManager-e4-98cc-27808b58082e] - Cleaned accumulator 23
